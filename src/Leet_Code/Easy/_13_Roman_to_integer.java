@@ -44,7 +44,7 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
 */
 package Leet_Code.Easy;
 
-public class _19_Roman_to_integer {
+public class _13_Roman_to_integer {
     public int romanToInt(String s) {
         int op =0;
         int i =0;
@@ -103,7 +103,7 @@ public class _19_Roman_to_integer {
 
     public static void main(String[] args) {
         String s ="XXIX";
-        _19_Roman_to_integer obj = new _19_Roman_to_integer();
+        _13_Roman_to_integer obj = new _13_Roman_to_integer();
         int op = obj.romanToInt(s);
         System.out.println(op);
     }
