@@ -1,5 +1,7 @@
 package Daddu_CP;
 
+import javax.swing.plaf.IconUIResource;
+
 public class Linked_List_O<t> {
     private Node<t> head;
     private int size;
@@ -22,10 +24,32 @@ public class Linked_List_O<t> {
         return head;
     }
 
+    // function to get length
+    public int length(){
+        if (head == null) return 0;
+        Node<t> temp = head;
+        int count = 0;
+        while (temp != null) {
+            count++;
+            temp = temp.next;
+        }
+        return count;
+    }
+
+    // function to add element at beginning.
+    public Node<t> addB(t data){
+        Node<t> n = new Node<>(data);
+        n.next = head;
+        head = n;
+        return head;
+    }
+
+
+
     public void print(){
         Node<t> temp = head;
         while (temp != null){
-            System.out.print(temp.data+"---->");
+            System.out.print(temp.data+" ----> ");
             temp = temp.next;
         }
         System.out.println("Null");
