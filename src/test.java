@@ -1,16 +1,48 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class test {
 
-    public static void main(String[] args) {
-        int[] arr = {1,172,75,771,231,121,64,509,63,283,62,198,70,518,322,55,58,1491,704,1232,367,344,278,7,9,206,876,122,2,134,239,45,300,202,72,1143};
-        Arrays.sort(arr);
-        for (int a : arr){
-            System.out.print(a+" ");
+    private static boolean isPrime(int n){
+        if( n == 1) return false;
+        if (n == 2 || n == 3) return true;
+        if (n %2 == 0 || n % 3 == 0 ) return false;
+
+        for (int i = 5; i*i <= n ; i = i+6) {
+            if (n % i == 0 || (n% (i+2)) == 0) return false;
         }
-        System.out.println();
-        System.out.println(arr.length);
+        return true;
+    }
+    public static void main (String[] args) throws java.lang.Exception{
+        Scanner s = new Scanner(System.in);
+        int t = s.nextInt();
+        while (t > 0){
+            int n = s.nextInt();
+            int k = s.nextInt();
+
+            int q = -1;
+            int[] arr = new int[n];
+            for (int i = 0; i < arr.length; i++) {
+                arr[i] = s.nextInt(); 
+            }
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] == k){
+                    q = i;
+                    break;
+                }
+            }
+            if (n == 1 && q != -1) System.out.println("Yes");
+            else if (q != -1 && q != n-1) System.out.println("Yes");
+            else System.out.println("No");
+                t--;
+        }
+        HashMap<Integer,Integer> m = new HashMap<>();
+        Collection<Integer> c = m.values();
+        boolean p = true;
+        for (Integer q : c) {
+            if (q > 2) p = false;
+        }
+        if (p) System.out.println("Yes");
+        else System.out.println("No");
+
     }
 }
