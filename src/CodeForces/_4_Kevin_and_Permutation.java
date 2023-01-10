@@ -1,10 +1,12 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class _4_Kevin_and_Permutation {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int t  = sc.nextInt();
-
+        HashMap<Integer,Integer> m = new HashMap<>();
+        
         while (t-- > 0){
             int l = sc.nextInt();
             int d = l/2;
