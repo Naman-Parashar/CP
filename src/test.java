@@ -1,16 +1,11 @@
 import java.util.*;
 public class test {
-    static int findTrailingZeros(int n) {
-        if (n < 0)
-            return -1;
-        int count = 0;
-        for (int i = 5; n / i >= 1; i *= 5)
-            count += n / i;
-        return count;
-    }
 
     public static void main(String[] args) {
-        int n = 100;
-        System.out.println("Count of trailing 0s in " + n + "! is " + findTrailingZeros(n));
+        int j=0;
+        while (j<10){
+             j++;
+             if (j==5) continue;
+             System.out.println("j is " +j);}
     }
 }
